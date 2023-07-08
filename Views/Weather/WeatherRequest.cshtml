@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Pogoda";
+}
+
+@model AplikacjaPogodowa.Models.WeatherRequest
+
+
+<form method="get" action="/Weather/current">
+    <label for="city" class="label label-default">Miasto:</label>
+    <div class="w-25 p-3">
+        <input type="text" name="city" id="city" class="form-control"/>
+    </div>
+    
+
+    <button type="Pobierz" class="btn btn-primary">Submit</button>
+</form>

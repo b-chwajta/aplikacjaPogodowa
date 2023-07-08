@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Pogoda";
+}
+
+@Html.ActionLink("Powrót", "WeatherRequest", "Weather")
+
+@model AplikacjaPogodowa.Models.WeatherResponse
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">Miasto</th>
+        <td>@Html.DisplayFor(model => model.Location.Name)</td>
+    </tr>
+    <tr>
+        <th scope="row">Data</th>
+        <td>@Html.DisplayFor(model => model.Location.LocalTime)</td>
+    </tr>
+    <tr>
+        <th scope="row">Warunki</th>
+        <td>
+            @Html.DisplayFor(model => model.Current.Condition.Text)
+            <img src="@Html.DisplayFor(model => model.Current.Condition.Icon)" alt="brak ikony">
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">Temperatura</th>
+        <td>@Html.DisplayFor(model => model.Current.Temp_c) °C</td>
+    </tr>
+    <tr>
+        <th scope="row">Temperatura odczuwalna</th>
+        <td>@Html.DisplayFor(model => model.Current.Feelslike_c) °C</td>
+    </tr>
+    <tr>
+        <th scope="row">Prędkość wiatru</th>
+        <td>@Html.DisplayFor(model => model.Current.Wind_kph) km/h</td>
+    </tr>
+    <tr>
+        <th scope="row">Kierunek wiatru</th>
+        <td>@Html.DisplayFor(model => model.Current.Wind_dir)</td>
+    </tr>
+    <tr>
+            <th scope="row">Ciśnienie</th>
+            <td>@Html.DisplayFor(model => model.Current.Pressure_mb) hPa</td>
+        </tr>
+    </tbody>
+</table>

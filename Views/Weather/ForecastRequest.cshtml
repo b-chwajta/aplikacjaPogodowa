@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Prognoza";
+}
+
+@model AplikacjaPogodowa.Models.ForecastRequest
+
+
+<form method="get" action="/Weather/forecast">
+    <label for="city">Miasto:</label>
+    <div class="w-25 p-3">
+        <input type="text" name="city" id="city" class="form-control"/>
+    </div>
+    <br>
+    <label for="city">Dni:</label>
+    <div class="w-25 p-3">
+        <input type="text" name="days" id="days" class="form-control"/>
+    </div>
+
+    <button type="Pobierz" class="btn btn-primary">Submit</button>
+</form>

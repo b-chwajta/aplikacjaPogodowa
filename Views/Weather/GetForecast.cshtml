@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Prognoza pogody";
+}
+
+@Html.ActionLink("Powrót", "ForecastRequest", "Weather")
+
+@model AplikacjaPogodowa.Models.ForecastResponse
+
+<p>Prognoza dla: @Html.DisplayFor(model => model.Location.Name)</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col"></th>
+        <th scope="row">Data</th>
+        <th scope="row">Temperatura</th>
+        <th scope="row">Wilgotność</th>
+        <th scope="row">Prędkość wiatru</th>
+        <th scope="row">Warunki</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var forecast in Model.Forecast.Forecastday)
+    {
+        <tr>
+            <td></td>
+            <td>@forecast.Date</td>
+            <td>@forecast.Day.Avgtemp_c °C</td>
+            <td>@forecast.Day.Avghumidity %</td>
+            <td>@forecast.Day.Maxwind_kph km/h</td>
+            <td>@forecast.Day.Condition.Text <img src="@forecast.Day.Condition.Icon" alt="brak ikony"></td>
+        </tr>
+    }
+    </tbody>
+</table>

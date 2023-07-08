@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align:center">Aplikacja pogodowa</h1>
+        <p style="text-align:center">Aplikacja służąca do pobierania aktualnej pogody w danym mieście oraz prognozy pogody na określony czas</p>
+        <p style="text-align:center">Aplikacja wykorzystuje https://www.weatherapi.com</p>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <a class="nav-link text-light btn btn-primary" asp-area="" asp-controller="Weather" asp-action="WeatherRequest">Aktualna Pogoda</a>
+        </div>
+        <div class="col-sm">
+            <a class="nav-link text-light btn btn-primary btn btn-primary" asp-area="" asp-controller="Weather" asp-action="ForecastRequest">Prognoza Pogody</a>
+        </div>
+    </div>
+</div>
